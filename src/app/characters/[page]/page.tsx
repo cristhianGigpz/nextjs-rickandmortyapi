@@ -9,7 +9,8 @@ import Link from "next/link";
 
 export default async function CharactersPage({ params }: { params: { page: string } }) {
   //const page = params.page;
-  let currentPage = parseInt(params.page);
+  const { page = "1" } = await params; // Aseguramos que page sea un string, por defecto "1"
+  let currentPage = parseInt(page);
   if (currentPage > 42) currentPage = 42; // Limitar a 42 páginas
   const nextPage = currentPage > 41 ? null : currentPage + 1; // Si es la última página, no hay siguiente
   const prevPage = currentPage > 1 ? currentPage - 1 : null;

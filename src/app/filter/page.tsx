@@ -8,7 +8,7 @@ import Link from "next/link";
 export default async function CharactersPageFilter({ searchParams }: { searchParams: { name?: string; status?: string } }) {
 //export default function CharactersPageFilter() {
   //const searchParams = useSearchParams();
-  const { name, status } = await searchParams;
+  const { name = "", status = "" } = await searchParams;
   //const name = searchParams?.name ?? "";
   //const status = searchParams?.status ?? "";
   //const name = searchParams.get('name') ?? '';
